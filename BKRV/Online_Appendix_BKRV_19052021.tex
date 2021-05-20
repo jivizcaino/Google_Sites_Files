@@ -1,0 +1,831 @@
+\documentclass[10pt]{article}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,sectsty,comment,footmisc,caption,natbib,pdflscape,subfigure,array,hyperref,authblk,mathtools,multirow,mathtools,bm,etoolbox,float,graphicx,mathrsfs,mathabx,pdflscape,stackengine,esint,amsthm,amsmath,amsfonts,amssymb,verbatim,dirtytalk,multirow,calrsfs,bbm,lipsum,threeparttable,longtable,bbm,subcaption,hyperref,dsfont,physics,lscape,threeparttable,environ}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor =magenta,
+    citecolor=magenta}
+
+\title{Skill-Biased Structural Change\\ \LARGE \textbf{Online Appendix}}
+\date{}
+\author{Francisco J. Buera, Joseph P. Kaboski, Richard Rogerson, and Juan I. Vizcaino}
+\begin{document}
+
+\maketitle
+
+\section{Comparison With Katz and Murphy 1992}
+In this section we provide a more detailed explanation on the sources of the quantitative differences between our results and those in Katz and Murphy 1992 (KM). To that end, we first reproduce their results using the same data and methodology applied in their paper. We gradually move towards our methodology and data sources by introducing changes in the data or the methodology applied that might have a relevant quantitative impact, one at a time. To set the ground, we first review KM's shift-share approach to compute their measured between industry demand shift in Subsection \ref{sec: KM_shift_share}. We continue to layout in detail how our methodology to measure human capital and the wage premium differs from the one used in KM in Subsection \ref{sec: KM_BKRV_eff}. In Subsection \ref{sec:measurement_implicaitons} we carefully explain what are the consequence of the difference in human capital measurement between our work and KM. Finally, in Subsection \ref{sec:quant_differences_with_KM} we quantify the sources of the differences between our results and those in KM. 
+
+\subsection{KM's Shift-Share Approach to Measure Between-Industry Demand Shifts} \label{sec: KM_shift_share}
+\begin{comment}
+We begin by reviewing KM's approach to measuring demand shifts. Since we are interested in quantifying the change in demand in favor of high-skill labor that is due to the sectoral reallocation of economic activity, we focus on their shift-share methodology to compute the between-sector demand shift in favor of high-skill workers and on the contribution of this between-industry demand shift on the total demand shift in favor of high-skill workers. To ease the comparison, we follow their methodology throughout Table A.\\
+\end{comment}
+
+KM's between-sector change in demand for group $k$, $\Delta X^{d}_{k}$, measured relative to the employment of group $k$ in the base year is given by
+\begin{equation} \label{eq:shift_share_km}
+    \Delta X^{d}_{k} = \frac{\Delta D_{k}}{E_{k}} = \sum_{j} \left(\frac{E_{j,k}}{E_{k}}\right) \left(\frac{\Delta E_{j}}{E_{j}}\right) = \frac{\sum_{j} \phi_{j,k}\Delta E_{j}}{E_{k}},
+\end{equation}
+where $E_{j}$ is total labor input in sector $j$, $\Delta E_{j}$ is the change in the total labor input of sector $j$ between the initial and the final year, $E_{k}$ is group $k$'s employment measured in the base year, $\phi_{j,k}= \left(E_{j,k}/E_{j}\right)$ is group $k$'s share of total employment in sector $j$ in the base year \footnote{In KM's notation $\left(E_{j,k}/E_{j}\right)=\alpha_{j,k}$. We introduce a change in notation to avoid confusion with the technology parameters $\alpha_{j}$.}. All the employment quantities are measured in efficiency units.\\
+
+Two additional comments are in order. First, we follow KM and choose the average for the period under study as the base period \footnote{Notice that, like in KM, we make a distinction between base period, initial year, and final year. For example, when we compute the measured demand shift between 1979 and 1989, the initial year is 1979, the final year is 1989, and the base period the average between 1979 and 1989.}. Second, we normalize all employment measures so that total employment in efficiency units in each year sums to one.\\ 
+
+We consider two groups of workers, high- and low-skill, so $k=\left\lbrace{ H,L \right\rbrace}$. High-skill workers are those with college complete or more, while low-skill workers are those with less than college complete. The number of industries $(j)$ varies depending on the exercise we perform and is specified in Table A, depending on the case. The between-industry demand shift in favor of high-skill workers relative to low-skill workers is given by
+\begin{equation} \label{eq:relative_demand_shift_km}
+   \Delta X^{d}_{ H/L } = \Delta X^{d}_{H} - \Delta X^{d}_{L} .
+\end{equation}
+
+To gauge the contribution of the measured between-sector relative demand shift on the total relative demand shift in favor of high-skill workers, we follow KM and define the total demand of high-skill workers relative to low-skill workers in period $t$, denoted by $D_{t}$ as
+\begin{equation} \label{eq:total_demand_km}
+ D_{t}= \sigma \cdot ln \left(\frac{w_{H,t}}{w_{L,t}}\right) + ln\left(\frac{E_{H,t}}{E_{L,t}}\right),
+\end{equation}
+where $\frac{w_{H,t}}{w_{L,t}}$ is the skill premium in period $t$, $E_{H,t}$ and $E_{L,t}$ are total high- and low-skill labor employment in period $t$, and $\sigma$ is the elasticity of substitution between high- and low-skill labor.
+
+As a result, the between-industry contribution to the total change in the demand for high-skill labor relative to low-skill labor is then given by
+\begin{equation} \label{eq:between_ind_contribution}
+\frac{ln\Big(1+\Delta X^{d}_{ H/L } \Big)}{\Big(D_{T}-D_{1}\Big)} 
+= \frac{ln\left(1+\Delta X^{d}_{ H/L }\right)}{\sigma \cdot \left[ln \left(\frac{w_{H,T}}{w_{L,T}}\right)-ln\left(\frac{w_{H,1}}{w_{L,1}}\right)\right]+\left[ln\left(\frac{E_{H,T}}{E_{L,T}}\right)-ln\left(\frac{E_{H,1}}{E_{L,1}}\right)\right]}
+\end{equation}
+\medskip
+\subsection{KM and BKRV Methodologies for Efficiency Units and Skill-Premium Computation} \label{sec: KM_BKRV_eff} 
+Implementing KM's shift-share formula requires transforming employment into efficiency units of labor and calculating a measure of the skill-premium. In this section we describe the procedures followed to do so in KM and in our benchmark calculation.\\
+
+Suppose we have data on labor compensation and total hours worked for workers that vary in their gender (indexed by $g \in \left\lbrace m,f \right\rbrace$), age/experience (indexed by $a \in \left\lbrace 1,2,...,A \right\rbrace$), educational attainment (indexed by $e \in \left\lbrace <hs, hs , >hs \ \& <coll , coll , >coll \right\rbrace$), and the industry they work for (indexed by $j \in \left\lbrace 1,2,...,J \right\rbrace$). Time is discrete and denoted by $t \in \left\lbrace 1,2,...,T \right\rbrace$.
+Thus, $lab_{j,g,a,e,t}$ and $l_{j,g,a,e,t}$ represent labor compensation and hours worked for workers in industry $j$, of gender $g$, age $a$, education group $e$, and period $t$.\\
+
+\subsubsection{BKRV Methodology for Efficiency Units} \label{subsec:bkrv_eff_methodology}
+We first describe our methodology to transform hours worked into equivalent efficiency units, which we label as the BKRV methodology. We partition the education set into two subgroups, high- and low-skill individuals, which we denote by $k \in \left\lbrace H,L \right\rbrace$. High-skill individuals are those with college complete or more ($ e \in \mathcal{E} _{H}= \left\lbrace coll,>coll \right\rbrace$), while low-skill workers are those with less than college complete ($ e \in \mathcal{E} _{L}= \left\lbrace <hs,hs,>hs \ \& <coll  \right\rbrace$).\\
+
+We model labor income as a function of the wage per efficiency unit of labor of group $k$ ($w_{k,t}$), the hours worked ($l_{j,a,g,e,t}$) and efficiency units of labor ($h_{j,a,g,e,t}$) provided by a worker. To be precise,
+
+\begin{equation*}
+lab_{j,g,a,e,t} = w_{ k,t } \cdot l_{j,a,g,e,t} \cdot h_{j,a,g,e,t}.
+\end{equation*}
+
+We make two normalizations to identify $w_{H,t}$, $w_{L,t}$, and $h_{j,a,g,e,t}$. In each period we normalize the average efficiency units of male individuals in the age group 35-44 with high school and college education complete to one. To be precise
+\begin{equation*}
+    \frac{ \sum_{j} l_{j,m,35-44,coll,t} \cdot h_{j,m,35-44,coll,t} }{ \sum_{j} l_{j,m,35-44,coll,t} } = 1,
+\end{equation*}
+and 
+\begin{equation*}
+    \frac{ \sum_{j} l_{j,m,35-44,hs,t} \cdot h_{j,m,35-44,hs,t} }{ \sum_{j} l_{j,m,35-44,hs,t} } = 1 .
+\end{equation*}\\
+
+\medskip
+
+As a consequence, the wages per efficiency units of high- and low-skill labor are given by
+\begin{equation*}
+    w_{H,t} = \frac{ \sum_{j} lab_{j,m,35-44,coll,t} }{ \sum_{j} l_{j,m,35-44,coll,t} } ,
+\end{equation*}
+and
+\begin{equation*}
+    w_{L,t} = \frac{ \sum_{j} lab_{j,m,35-44,hs,t} }{ \sum_{j} l_{j,m,35-44,hs,t} }, 
+\end{equation*}\\
+and the skill-premium for the BKRV methodology in period $t$ by their ratio $\frac{w_{H,t}}{w_{L,t}}$.\\
+
+Total hours worked measured in equivalent efficiency units of high- and low- skill labor in sector $j$ are then given by
+\begin{align*}
+    E_{j,H,t} & = \sum\limits_{ e \in \mathcal{E} _{H} } l_{j,g,a,e,t} \cdot h_{j,g,a,e,t} \\
+               & = \frac{ \sum\limits_{ e \in \mathcal{E} _{H} } lab_{j,g,a,e,t} }{ w_{H,t} }, 
+\end{align*}
+and
+\begin{align*}
+    E_{j,L,t} & = \sum\limits_{ e \in \mathcal{E} _{L} } l_{j,g,a,e,t} \cdot h_{j,g,a,e,t} \\
+               & = \frac{ \sum\limits_{ e \in \mathcal{E} _{L} }  lab_{j,g,a,e,t} }{ w_{L,t} } . 
+\end{align*}
+We take $\frac{E_{j,H,t}}{E_{j,L,t}}$ as our measure of the supply of high-skill labor relative to low-skill labor.\\
+
+Finally, to implement the shift-share analysis described in equation (\ref{eq:shift_share_km}) we express efficiency units into equivalent high-skill efficiency units by computing
+\begin{align*}
+    E_{j,L,t} \cdot \left(\frac{w_{L,t}}{w_{H,t}}\right) & = \frac{ \sum\limits_{ e \in \mathcal{E} _{L} }  lab_{j,g,a,e,t} }{ w_{H,t} },
+\end{align*}
+and aggregating efficiency units at the industry level according to
+\begin{align*}
+    E_{j,t} = E_{j,H,t} + E_{j,L,t} \cdot \left(\frac{w_{L,t}}{w_{H,t}}\right) .
+\end{align*}
+\subsubsection{KM Methodology for Efficiency Units} \label{subsec:km_eff_methodology}
+To facilitate the exposition, we break KM's methodology to compute efficiency units into a series of steps, which we present below. 
+
+\begin{enumerate}
+\item Compute the share of hours worked by individuals of gender $g$, age $a$, and education $e$ in period $t$ 
+\begin{equation*}
+    \gamma_{g,a,e,t} = \frac{ \sum_{j} l_{j,g,a,e,t}}{ \sum_{j} \sum_{g} \sum_{e} l_{j,g,a,e,t}}. 
+\end{equation*}
+Take the average across time of the employment shares computed above to obtain a series of fixed employment weights. To be precise,
+\begin{equation*}
+    \overline{\gamma}_{g,a,e} = \frac{1}{T} {\sum_{t} \gamma_{g,a,e,t} \ .
+\end{equation*}
+
+\item Compute the hourly wage for individuals of gender $g$, age $a$, and education $e$ in time $t$ as
+\begin{equation*}
+    w_{g,a,e,t} =  \frac{\sum_{j} lab_{j,g,a,e,t}}{\sum_{j} l_{j,g,a,e,t}} .
+\end{equation*}
+\item Obtain a fixed-weight wage index in period $t$ as 
+\begin{equation*}
+    w_{index,t} = \sum_{g}\sum_{a}\sum_{e} \ \overline{\gamma}_{g,a,e} \cdot w_{g,a,e,t} .
+\end{equation*}
+
+\item Define the efficiency factor for the group of workers of gender $g$, age $a$, and education $e$ in time $t$ as
+\begin{equation*}
+h^{KM}_{g,a,e,t} = \frac{w_{g,a,e,t}}{w_{index,t}}, 
+\end{equation*}
+and its corresponding average across time as
+\begin{equation*}
+\overline{h}^{KM}_{g,a,e} = \frac{1}{T} \sum_{t}  h^{KM}_{g,a,e,t}
+\end{equation*}
+\item Use these efficiency factors to transform hours worked into efficiency units. More specifically, the hours of workers in the gender $g$, age $a$, and education $e$ group in industry $j$ and period $t$, measured in KM efficiency units are given by
+\begin{equation*}
+E^{KM}_{j,g,a,e,t} = l_{j,g,a,e,t} \cdot \overline{h}^{KM}_{g,a,e}.
+\end{equation*}
+
+\item Aggregate hours measured in KM efficiency units at the educational group level \footnote{KM consider four educational groups, gathering together workers with college complete and those with more than college complete into their highest educational category.}, i.e.
+\begin{equation*}
+E^{KM}_{j,e,t} = \sum_{g} \sum_{a} E_{j,g,a,e,t}. 
+\end{equation*}
+
+\item Aggregate the efficiency units of these four educational groups into two broader groups of high school and college equivalents. This aggregation is performed by using a linear combination of pure high school graduates with high school and college dropouts, and pure college graduates with high school and college dropouts according to 
+
+\begin{align*}
+E^{equiv}_{j,coll,t}    & = E_{j,coll,t}    - 0.05 \cdot  E_{j,<hs,t} + 0.29 \cdot E_{j,>hs<coll,t}, \\
+E^{equiv}_{j,hs,t}      & = E_{j,hs,t}      + 0.93 \cdot  E_{j,<hs,t} + 0.69 \cdot E_{j,>hs<coll,t}.
+\end{align*}
+
+KM obtain the coefficients for these linear combinations by running regressions of the wages of high school dropouts and college dropouts into the wages of high school graduates and college graduates, respectively \footnote{In KM's words: \textit{"We treat high school graduates (those with twelve years of schooling) as pure high school equivalents, and we treat college graduates as pure college equivalents. We allocate other categories of workers (those with less than twelve years of schooling and those with some college) to our two aggregate groups on the basis of regressions determining the extent to which their wages move with the wage of high school graduates and college graduates, respectively. For those with less than a high school degree and those with some college, we regress the average wage series for each of these two groups on the wage series for high school graduates and for college graduates over the 1963-1987 period. The regression results suggest that one person with  some college is equivalent to a total of 0.69 of a high school graduate and 0.29 of a college graduate, while a high school dropout is equivalent to 0.93 of a high school graduate and -0.05 of a college graduate. We use these coefficients to allocate the corresponding quantities of high school dropouts and those with some college to the high school and college quantities to form the supplies of high school and college equivalents."}}.\\
+\end{enumerate}
+We follow KM and take $\frac{E^{equiv}_{j,coll,t}}{E^{equiv}_{j,hs,t} }$ to be their measure of the supply of high-skill labor relative to low-skill labor.\\
+
+Regarding their skill-premium measure, KM build a fixed-weight weighted-average of the college-to-high school wage premium for each of the gender-age groups in their sample \footnote{The methodology for the skill premium calculation is explained in footnote 20 of KM. It reads: \textit{"In this section we measure the college/high school wage ratio as the fixed-weight average of the ratio of the average weekly wage of college graduates to the average weekly wage of high school graduates for sixteen cells defined by sex and five-year experience brackets. The fixed weight for each cell is the cell's average share of total employment over the 1963-1987 period"}.}. In further detail, KM's skill-premium is given by
+\begin{equation*}
+\left(\frac{w_{H,t}}{w_{L,t}}\right)_{KM} &= \frac{\sum_{g} \sum_{a} \left(\overline{\gamma}_{g,a,coll}+\overline{\gamma}_{g,a,hs} \right)  \left(\frac{w_{g,a,coll,t}}{w_{g,a,hs,t}}\right)}{\sum_{g} \sum_{a} \left(\overline{\gamma}_{g,a,coll}+\overline{\gamma}_{g,a,hs} \right)} .
+\end{equation*}
+Finally, to implement the shift-share analysis described in equation (\ref{eq:shift_share_km}), we express efficiency units into equivalent high-skill efficiency units by computing
+\begin{equation*}
+E^{equiv}_{j,hs,t} \cdot \left(\frac{\widebar{w_{L}}}{\widebar{w_{H}}}\right)_{KM} 
+\end{equation*}
+and aggregating efficiency units at the industry level according to
+\begin{align*}
+    E^{KM}_{j,t} = E^{equiv}_{j,coll,t} +E^{equiv}_{j,hs,t} \cdot \left(\frac{\widebar{w_{L}}}{\widebar{w_{H}}}\right)_{KM}, 
+\end{align*}
+where $ \left(\frac{\widebar{w_{L}}}{\widebar{w_{H}}}\right)_{KM}$ is the average of KM's skill-premium between the initial and the final period.
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{KM vs BKRV Efficiency Units Methodology: Implications for Measurement} \label{sec:measurement_implicaitons}
+\subsubsection{Simple Set up}
+To highlight the key issues, we first consider a simplified world with one type of human capital and two sectors. The wage per hour is the product of the wage per efficiency unit of labor in sector $j$, $w_{j,t}$, and the efficiency unit factor of the worker $i$, $h_{t}^{i}$
+\begin{equation} \label{eq:eff wage-simple}
+\omega_{j,t}^{i}=w_{j,t}h_{t}^{i} \ . 
+\end{equation}
+We further assume that the efficiency unit factor of worker $i$ consists of two components: 
+\begin{eqnarray*}
+h_{t}^{i} & = & \overline{h}+\varepsilon^{i}_{t} \ .
+\end{eqnarray*}
+The term $\varepsilon^{i}_{t}$ captures unobserved individual heterogeneity, which we view as reflecting unobserved ability, but one could easily re-frame as reflecting effort.\\
+
+Individual $i$ supplies $l_{j,t}^{i}$ hours of labor to sectors $j.$ Total labor payments to labor in sector $j$ are:
+\begin{eqnarray} \label{eq:Compensation-1}
+lab_{j,t} & = & w_{j,t}\sum_{i}l_{j,t}^{i}h_{t}^{i} , 
+\end{eqnarray}
+where $\sum_{i}l_{j,t}^{i}h_{t}^{i}$ is the total efficiency units or efficiency-weighted hours of labor supplied to sector $j$ (at time $t$).\\ 
+
+Consider observed average wages in sector $j$, $\omega_{j,t}$, (and, for convenience of notation, define $L_{j,t}=\sum_{i}l_{j,t}^{i}$ as the total quantity of hours of labor supplied to sector $j$):
+\begin{eqnarray*}
+\omega_{j,t} & = & w_{j,t}\frac{\sum_{i}l_{j,t}^{i}}{L_{j,t}}h_{t}^{i}\\
+ & = & w_{k,j,t}\left[\overline{h}+\bar{\varepsilon}_{j,t}\right] ,
+\end{eqnarray*}
+where we have defined $\bar{\varepsilon}_{j,t}=\sum_{i}\frac{l_{t,j}^{i}}{L_{j,t}}\varepsilon^{i}_{t}$ as the average unobservable in sector $j$ and period $t$. It is clear that there are two reasons that these average wages could differ across sectors $j$. The first is that the wage for efficiency units, $w_{j,t}$, differ across sectors because, for example, labor is not mobile. The second is that average (labor-weighted) unobservables differs across sectors. Since both are unobservable, if one wants to measure the efficiency units in each sector, one has to either make assumptions
+about sector wages per efficiency unit or about unobserved efficiency units. Regardless of these assumptions, one needs to choose a scale for efficiency units. We normalize the average efficiency units per hour to be one, i.e., $\sum_{j}\sum_{i}l_{j,t}^{i}h_{t}^{i}=\sum L_{j,t}$.\\
+
+One natural assumption, the one which motivates BKRV measurement, is that labor is mobile across sectors and so the law of one price holds for efficiency unit, i.e., $w_{j,t}=w_{t}$. Under this assumption, observed wage differences in sectors reflect difference in average unobservables. The average wage is easily calculated as the ratio of total labor payments to hours in the economy:\\
+\begin{eqnarray*}
+\sum_{j}lab_{j,t} & = & w_{t}\sum_{j}\sum_{i}l_{j,t}^{i}h_{t}^{i}\\
+w_{t} & = & \frac{\sum_{j}lab_{j,t}}{\sum L_{j,t}} \, 
+\end{eqnarray*}
+and the BKRV stock of efficiency units is constructed using sectoral labor payments and this wage:
+$$\sum_{i}l_{j,t}^{i}h_{t}^{i}=\frac{lab_{j,t}}{w_{t}}.$$
+
+An alternative assumption is that there is no heterogeneity, or, weaker, that there no difference in average unobservables across sectors, so that $\bar{\varepsilon}_{j}=\bar{\varepsilon}$. In this case, one can use the KM method and simply measure efficiency units by the stock of labor: 
+$$\sum_{i}l_{j,t}^{i}h_{t}^{i}=L_{j,t}.$$
+We construct our efficiency units stock by making following assumption about the labor-weighted average efficiency factor:
+
+\begin{eqnarray*}
+\frac{\sum_{j}\sum_{i}l_{j,t}^{i}\left(\overline{h}+\varepsilon^{i}_{t}\right)}{\sum_{j}L_{,j,t}} & = & 1\\
+\overline{h}+\sum_{j}\sum_{i}\frac{l_{j,t}^{i}}{\sum_{j}L_{j,t}}\varepsilon^{i}_{t} & = & 1
+\end{eqnarray*}
+
+\subsubsection{More General Set Up}
+We now show how these key issues extend to a set up that matches our actual analysis and data: two distinct imperfectly substitutable types of labor, $k=H,L$, different observable groups of labor indexed by $n$ (these observable groups are gender, age, and education cells in our data), and potentially time-varying unobserved components. Concretely, assume:
+\begin{eqnarray*}
+h_{n,t}^{i} & = & \overline{h}_{n}+\varepsilon_{n,t}^{i} \ .
+\end{eqnarray*}
+
+The time varying aspect could reflect changing composition of the overall labor force composition of particular observable groups, e.g., female workers. Wages now depend on the wage per efficiency unit of type $k$ labor in sector $j$, $w_{k,j,t}$: 
+
+\begin{equation}
+\omega_{n,k,j,t}^{i}=w_{k,j,t}h_{n,t}^{i}. \label{eq:eff wage}
+\end{equation}
+
+Defining $L_{n,j,t}=\sum_{i}l_{n,j,t}^{i}$ as the total quantity of hours of labor of group $n$ supplied to sector $j$, the average wage of observable group $n$ workers in sector $j$ is
+
+\begin{eqnarray*}
+\omega_{n,j,t} & = & w_{k,j,t}\frac{\sum_{i}l_{n,j,t}^{i}}{L_{n,j,t}}h_{n,t}^{i}\\
+ & = & w_{k,j,t}\left[\overline{h}_{n}+\bar{\varepsilon}_{n,j,t}\right] \ ,
+\end{eqnarray*}
+
+which can vary because of observable differences or the average group-specific unobservable component, $\bar{\varepsilon}_{n,j,t}=\sum_{i}\frac{l_{n,t,j}^{i}}{L_{n,j,t}}\varepsilon_{n,t}^{i}$.
+Similarly, average (type-$k$) wages, $\omega_{k,j,t}$, can still be sector-specific because of the composition of observable groups in addition to a (new) sector-specific unobservable term, $\bar{\varepsilon'}_{j}$:
+
+\begin{eqnarray*}
+\omega_{k,j,t} & = & w_{k,t}\frac{\sum_{n\in k}\sum_{i}l_{n,j,t}^{i}}{\sum_{n\in k}L_{n,j,t}}h_{n,t}^{i}\\
+ & = & w_{k,t}\left[\sum_{n\in k}\overline{h}_{n}\frac{L_{n,j,t}}{\sum_{n'\in k}L_{n',j,t}}+\bar{\varepsilon'}_{j}\right] \ ,
+\end{eqnarray*}
+
+with $\bar{\varepsilon'}_{j}=\sum_{n\in k}\sum_{i}\frac{l_{n,t,j}^{i}}{\sum_{n'\in k}L_{n',j,t}}\varepsilon_{n,t}^{i}$. 
+
+\subsubsection{Assumptions for Our Measure}
+
+To construct BKRV efficiency units with multiple labor groups, the analog of the simple set up is that we need to assume that unobservables of one observable group (in each $k)$ remains constant.\footnote{An alternative would be to assume that a conditional unobservable, e.g,, group $\tilde{n}$ in sector $\tilde{j}$ remains constant, but finding a justification for such a group seems more difficult.} However, we can allow for time-varying unobservables for the other groups. Specifically, for this group, $\tilde{n},$ we make following assumption about the labor-weighted average efficiency factor:
+
+\begin{eqnarray*}
+\frac{\sum_{j}\sum_{i}l_{\tilde{n},j,t}^{i}\left(\overline{h}_{\tilde{n}}+\varepsilon_{\tilde{n},t}^{i}\right)}{\sum_{j}L_{\tilde{n},j,t}} & = & \overline{h}_{\tilde{n}}\\
+\sum_{j}\frac{L_{\tilde{n},j,t}}{\sum_{j'}L_{\tilde{n},j',t}}\bar{\varepsilon}_{\tilde{n},j,t} & = & 0 \ .
+\end{eqnarray*}
+
+The assumption amounts to assuming that the second term, the average (labor-weighted) unobservable across the economy, is time invariant for the single group $\tilde{n}$ in each $k$. Concretely, we choose prime-aged (aged 34-45) males with either completed high school or completed college as our numeraire for $k=L$ and $H,$ respectively. The assumption is most reasonable for this group, since prime-aged males are securely attached to the labor market and the education groups are large so selection effects will be less important. As with
+the simple set up, we again need to choose a scale or numeraire for each type of labor, which we do using the same groups by normalizing $\overline{h}_{\tilde{n}}=1$. \\
+
+Given this assumption, we can sum equation (\ref{eq:eff wage}), using labor weights, across all $i$and $j$, and then solving for $w_{k,t}$ in the exact analogous way as the simpler expression above:
+\begin{eqnarray*}
+w_{k,t} & = & \frac{\sum_{j}\sum_{i}l_{\tilde{n},j,t}^{i}\omega_{\tilde{n},j,t}^{i}}{\sum_{j}\sum_{i}l_{\tilde{n},j,t}^{i}h_{\tilde{n},t}^{i}}\\
+ & = & \frac{lab_{\tilde{n},t}}{L_{\tilde{n},t}} \ ,
+\end{eqnarray*}
+where we have applied the assumption between the first and second lines, and also defined $lab_{\tilde{n},t}=\sum_{j}\sum_{i}l_{\tilde{n},j,t}^{i}\omega_{\tilde{n},j,t}^{i}$ and $L_{\tilde{n},t}=\sum_{j}\sum_{i}l_{\tilde{n},j,t}^{i}$. We can likewise solve for total efficiency units of type $k$ employed in sector $j$ in the exact analogous way:
+$$\sum_{n\in k}\sum_{i}l_{n,j,t}^{i}h_{n,t}^{i}=\frac{lab_{k,j,t}}{w_{k,t}}.$$
+Full identification now rests on the law of one price in wages and the additional assumptions of the constant average unobservable of group $\tilde{n}$ in each $k.$ The approach here is identical to the simpler set-up, except (i) it must be done for both $k$, (ii) group, $\tilde{n}$, has a special role in calculating the wage per  efficiency unit, and (iii) this role allows for the relaxation of constant average unobservables for all other groups. 
+
+\subsubsection{The KM Measure}
+With different $n$ groups, the change in the KM measure of efficiency units is to combine various groups using fixed weights, $\overline{h}_{n}^{KM}$. In the context of the assumptions of this set up with unobservable components and flexible labor markets the problem with the KM measure is two-fold. First, fixed weights imply that for all $n$, $j,$ and $t$:
+\begin{eqnarray*}
+\overline{h}_{n}^{KM}L_{n,j,t} & = & \sum_{i}l_{n,j,t}^{i}h_{n,t}^{i}\\
+\overline{h}_{n}^{KM} & = & \overline{h}_{n}+\sum_{i}\frac{l_{n,j,t}^{i}}{L_{n,j,t}}\varepsilon_{n,t}^{i} \ ,
+\end{eqnarray*}
+Recall that the BKRV measure requires us to assume the average unobservables of prime-aged males to be constant over time. Given the expression above, the KM measure would require the average unobservables (the second term on the right-hand side) to be constant for \textit{all} observable groups, $n,$ sector, j, and time, $t$, combinations. This is far stronger assumption runs counter to outside evidence, e.g., Mulligan and Rubenstein (2008), who find strong unobserved selection changes over time for high-skilled women, for example.\\ 
+
+To see the problematic implications for the cross-sector assumption, examine the ratio of labor compensation at a single point in time $t$ but across two sectors $j$ and $j'$. We turn human capital efficiency unit stocks, using the KM assumptions and measures, into compensation by multiplying both by $w_{k,t}$:
+\begin{eqnarray*}
+\frac{lab_{n,j,t}}{lab_{n,j',t}} & = & \frac{w_{k,t}\sum_{n\in k}\overline{h}_{n}^{KM}L_{n,j,t}}{w_{k,t}\sum_{n\in k}\overline{h}_{n}^{KM}L_{n,j',t}}\\
+\frac{lab_{n,j,t}/w_{k,t}}{lab_{n,j',t}/w_{k,t}} & = & \frac{\sum_{n\in k}\overline{h}_{n}^{KM}L_{n,j,t}}{\sum_{n\in k}\overline{h}_{n}^{KM}L_{n,j',t}} \ .
+\end{eqnarray*}
+The left-hand side of the equation is the ratio of BKRV-measured human capital stocks, while the right-hand side is the ratio of KM-measured human capital stocks. Thus, if the KM assumptions were to hold and flexible labor markets, $w_{k,j,t}=w_{k,t}$, were to hold we could still measure human capital units the way we do. Indeed, we would get identical results.\\ 
+
+Of course, we do not get identical results. We interpret this difference as drawing from different average group-$n$ unobservables by sector: observably identical workers in different sectors are not truly identical.(As mentioned, this could also reflect differences in unobserved effort.)\\
+
+Using the KM methodology, one would instead need to interpret this difference as stemming from sector-specific wage premia, i.e., $w_{k,j,t}\neq w_{k,j',t}$: Identical workers in different sectors are truly identical but earn different wages. Again, we find the former more plausible.\\
+
+There is one final note about the KM methodology that relates to total compensation. KM utilize two separate samples to construct their price (wage) indexes and their quantity (efficiency units) indexes. For their wage index, they use full time workers for the same reason that we use prime-aged males because they are worried about unobserved compositional issues \footnote{To quote KM, their concern ``is to obtain data on a group that maintains a reasonably constant composition through time thus providing estimates of the prices received by workers of given skills. In this regard, our goal was to maximize the comparability through time. This is why we tried to focus on full-time workers with reasonably strong labor force attachment.'' (p. 39) They are also able to distinguish between part-time and full-time workers, which our data do not allow.}. However, to construct their efficiency units index they use the full sample of workers. Their quantities and prices do not multiply out to total labor compensation in the aggregate. Given their price (wage) index, the alternative is to construct an implicit quantity index, which is what we do to construct our human capital stocks. Thus, our wages and efficiency units always multiply to yield total compensation. 
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\medskip
+\subsection{Quantitative Comparison With KM} \label{sec:quant_differences_with_KM}
+Having set the methodological background, we now proceed to quantify the sources of the differences between our results and those in KM. There are three potential explanations for why we obtain different results: we use a different dataset (World KLEMS \footnote{See \citet{JHS_WorldKLEMS}.} vs. CPS), we measure human capital in a different way than KM (KM vs BKRV efficiency units), and our between industry contribution to the total change in the skill-premium is obtained using general equilibrium model-based counterfactuals, while KM rely on a shift-share analysis.\\
+
+We start by replicating KM's exercise using their exact same data (CPS). We continue to conduct a series of KM shift-share analyses were we make changes in the data until we converge to the dataset we use in our benchmark calculations (World KLEMS). We summarize these calculations in Table \ref{tab:KM_comparison_TabI} below. For the sake of clarity, we also provide a brief description of the exercises performed in each column below.
+
+\subsubsection*{Table 1 - Column A: KM}
+Column A in Table 1 reproduces the results from KM, taken directly from Table VIII in their paper. Row $(ii)$ presents the change in the relative supply of college to High-School equivalents, while row $(iii)$ shows the log change of the skill-premium, and row $(i)$ KM's measured between-industry demand shift, all for the period of 1979-1987. Row $(vi)$ shows that KM find a between-industry demand shift contribution to the total change in the relative demand for high-skill workers that is in the order of ten percent between 1979 and 1987. 
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsubsection*{Table 1 - Column B: Decennial Censuses vs CPS}
+Column B follows the same methodology as KM to compute the change in the relative supply of high and low-skill labor, the between-industry demand shift, and the total change in the skill-premium.\\
+
+The main difference with column A is that in and column B we use as data source the 1980 and 1990 decennial censuses from IPUMS-USA \footnote{See \citet{ipums_usa}.}, which ask questions for 1979 and 1989, respectively. Additionally, instead of using the 50 industries in the KM approach, we bridge the industries in the Census into the 31 sectors in the World KLEMS database. As a consequence, column B presents a minor change in the sample period under analysis (from 1979-1987 to 1979-1989), and a different industry classification criterion, which is closer to the one we use in our benchmark calculation.\\ 
+
+Changing the industry classification criterion does not have major quantitative implications: the measured between-industry demand shift is roughly the same as the one in KM, while its contribution to the total change in the relative demand of high-skill labor falls in one percentage point. This is due to higher growth in both the relative quantity of high-skill labor and the skill-premium.
+
+\subsubsection*{Table 1 - Column C: Age vs Experience}
+The only difference between Columns C and B is that we get one step closer to the way data are presented in the World KLEMS database by using age instead of experience as grouping criterion \footnote{We group workers in the same age groups as in the World KLEMS database: 14-15, 16-17, 18-24, 25-34, 35-44, 45-54, 55-64, and 65-99.}.\\
+
+Changing workers grouping criterion from experience to age does not translate into a quantitatively significant change in the measured between-industry contribution to the increase in the relative demand for high-skill labor, which rises from 9.2 to 9.7 percent.
+
+\subsubsection*{Table 1 - Column D: World KLEMS vs IPUMS-USA plus changes in the methodology to construct the relative supply of skill groups and the skill-premium}
+The data we used in Column C has the same structure as those in the labor input file of the World KLEMS database, which we use as the main data source in Column D. Since the labor input file in the World KLEMS is based on Census data for the years they are available we should not expect any major changes as we move from Column C to Column D.\\
+
+However, in order to compare the methodology used in our benchmark calculations more directly to the one in KM, we make one additional change in Column D. In this case, instead of measuring low- and high-skill labor as high school equivalents and college equivalents, respectively, we directly transform the hours of workers with less than college complete and college complete or above into equivalent high- and low-skill efficiency units by introducing some modifications to KM's methodology.\\
+
+Starting from step 3 in subsection \ref{subsec:km_eff_methodology}, we compute a fixed-weights wage index for the high- and low-skill group according to 
+\begin{equation*}
+    w^{H}_{index,t} = \frac{\sum_{g}\sum_{a}\sum_{ e \in \mathcal{E} _{H} } \ \overline{\gamma}_{g,a,e} \cdot w_{g,a,e,t}}{\sum_{g}\sum_{a}\sum_{ e \in \mathcal{E} _{H} } \ \overline{\gamma}_{g,a,e}} ,
+\end{equation*}
+and
+\begin{equation*}
+    w^{L}_{index,t} = \frac{\sum_{g}\sum_{a}\sum_{ e \in \mathcal{E} _{L} } \ \overline{\gamma}_{g,a,e} \cdot w_{g,a,e,t}}{\sum_{g}\sum_{a}\sum_{ e \in \mathcal{E} _{L} } \ \overline{\gamma}_{g,a,e}} .
+\end{equation*}
+
+We use these indices to define efficiency factors for high-skill and low-skill workers as follows. For the workers with college education or more ($e \in \mathcal{E} _{H}$)
+\begin{equation*}
+h^{H}_{g,a,e,t}  = \frac{w_{g,a,e,t}}{w^{H}_{index,t}}, 
+\end{equation*}
+while in the case of workers with less than college education ($e \in \mathcal{E} _{L}$)
+\begin{equation*}
+h^{L}_{g,a,e,t}  = \frac{w_{g,a,e,t}}{w^{H}_{index,t}}. 
+\end{equation*}
+For each gender, age, education group within the high- and the low-skill groups, we take the average of these efficiency factors over time to obtain $\overline{h}^{H}_{g,a,e}$ and $\overline{h}^{L}_{g,a,e}$.We use these weights to transform the hours in the high- and low-skill group into equivalent efficiency units.\\
+
+In the case of workers with college education or more ($e \in \mathcal{E} _{H}$), we proceed as follows
+\begin{equation*}
+E^{H}_{j,g,a,e,t} = l_{j,g,a,e,t} \cdot \overline{h}^{H}_{g,a,e} \ , 
+\end{equation*}
+while for individuals with less than college complete ($e \in \mathcal{E} _{L}$), we compute them as
+\begin{equation*}
+E^{L}_{j,g,a,e,t} = l_{j,g,a,e,t} \cdot \overline{h}^{L}_{g,a,e} \ . 
+\end{equation*}
+Finally, total high- and low-skill hours measured in efficiency units in industry $j$ under the modified KM methodology are given by
+\begin{equation*}
+E^{KM}_{j,H,t} = \sum_{g} \sum_{a} \sum_{ e \in \mathcal{E} _{H} } E^{H}_{j,g,a,e,t} \ ,
+\end{equation*}
+and
+\begin{equation*}
+E^{KM}_{j,L,t} = \sum_{g} \sum_{a} \sum_{ e \in \mathcal{E} _{L} } E^{L}_{j,g,a,e,t} \ .
+\end{equation*}
+
+This methodological change does not have a significant quantitative effect on the increase in the relative supply of high-skill labor, which falls from 30.7\% to 28.1\% (see rows $(ii)$ in Columns C and D). The change in the skill-premium is also smaller using the World KLEMS database during this period. However, the measured between-industry demand shift falls proportionately, which translates into a between-industry demand shift contribution that is still in the order of ten percent (9.7\% to be precise).\\
+
+So far we have introduced a series of changes to the data originally used in KM until we obtained a data set with the same structure as the one in the World KLEMS. The goal was to disentangle how much of the difference between our results and those in KM are due to the fact that we use World KLEMS instead of CPS data. The answer is that the quantitative role of data sources is minor: if we redo KM's shift-share analysis using our data, the between-industry contribution to the total rise in the skill-premium is 9.7\% (Column D). This is less than one percentage point below the original result in KM 10.6\% (Column A). We conclude that differences in the data used play a minor quantitative role in explaining how our results differ from those in KM.\\
+
+Having isolated the differences that are due to the fact that we use distinct data than KM, we proceed to quantify how much of the difference with KM's results are accounted for by the alternative way we measure human capital. To do so, we perform KM's shift-share analysis on our data (i.e. World KLEMS/EU KLEMS \footnote{See \citet{OMaTim09}.}), but measuring efficiency units according to both the KM and the BKRV methodologies. Finally, to quantify the fraction of the difference with KM that is attributable to our model- based approach, we compare the results of a shift-share analysis in the spirit of the one in KM, but using our data and our methodology for efficiency units, with those we obtain in our model-based approach \footnote{This is equivalent to comparing our results with those of a KM shift-share exercise using model data.}. The result of these exercises are presented in Table \ref{tab:KM_comparison_TabII}. A brief description of exercises carried out is also presented below.\\
+
+\subsubsection*{Table 2 - Column E: BKRV vs KM Methodologies for Efficiency Units}
+To facilitate the comparison, we start Table 2 by repeating column D. In Column E we use the same data (World KLEMS), industry aggregation criterion (31), and grouping criterion of workers (age) as in Column D. Compared to Column D, the most significant change we introduce in Column E is that we measure employment in BKRV efficiency units.\\
+
+As a result, we obtain a measured between-industry demand shift that more than doubles compared to the one under the KM methodology (9.4\% vs. 4.2\%; row $(i)$ in columns E vs. D), on a measured total relative demand shift that rises less than proportionately, leading to a between-industry demand shift contribution that is two times larger under the BKRV methodology.
+
+\subsubsection*{Table 2 - Column F: Aggregation at the Two-Sector Level}
+In Column F we change the industry aggregation criterion and group the 31 major industries in the World KLEMS into two broader groups: a high-skill and a low-skill sector following the criterion described in the paper \footnote{See Section \ref{sec:hs_labor_intensity} for a list of World KLEMS industries and their corresponding skill intensity.}. This change has the effect of increasing the measured between-industry demand shift in almost one percentage point, while its contribution increases by nearly two percentage points to 21.4\%.
+
+\subsubsection*{Table 2 - Column G: Longer Period (1977-2005)}
+Column G explores how the results change when we use the period in our benchmark calculation (1977-2005), while still aggregating industries at the two-sector level, using age as workers grouping criterion, and measuring hours in BKRV efficiency units. Compared to the results for the 1980-1990 period presented in Column F, the measured between-industry demand shift nearly doubles, while the total demand shift shows more than a twofold increase. As a result, the between-industry demand shift contribution falls from 21.4 percent for the period of 1980-1990 to 17.8 percent for the period of 1977-2005.
+
+\subsubsection*{Table 2 - Column H: KM Methodology for Efficiency Units Over the BKRV Period (1977-2005)}
+In Column H of Table 2 we study how the measured between-industry demand shift changes when we use KM's 1992 methodology for efficiency units but over the period we use in our benchmark calculation (1977-2005), while still aggregating industries at the two-sector level. The exercise is similar to the one performed when we compared columns D and E, but using a longer period.\\
+
+Comparing Columns G and H shows that under our methodology to compute efficiency units and the skill-premium we find a 7.5 percentage point higher between-industry relative demand shift contribution than under KM's methodology. This represents a contribution that is 1.7 times higher under our methodology for the period of 1977 to 2005 (17.8\% vs. 10.3\%).
+
+\subsubsection*{Table 2 - Columns I and J: BKRV Methodology vs KM Methodology for Efficiency Units Over our Sample Period using EU KLEMS Data}
+In Columns I and J we do the same comparison than in columns G and H, but using EU KLEMS instead of Worl KLEMS data. Comparing columns G with I and columns H with J, we see that the between-industry relative demand shift contributions are higher when we use EU KLEMS data, both under the KM and the BKRV efficiency unit methodologies. This is mostly attributable to higher measured between-industry relative demand shifts (row $i$). Additionally, the gap between our measured between-industry relative demand shift contribution and the corresponding one using KM's methodology to compute efficiency units falls from 1.7 to 1.4 (21.8\% vs 15.4\%).  The measured between-industry relative demand shift increases comparatively more under KM's methodology when we use EU KLEMS data.
+
+\subsubsection*{Table 2 - Columns K: Model Counterfactuals Using World KLEMS Data}
+Columns K in Table 2 measures the between industry demand shift contribution to the total change in the skill-premium using model counterfactuals instead of relying on the shift-share analyses presented in Columns A to J.\\
+
+In column K we use World KLEMS data, which is the same data we use in our benchmark calculation, but we the relative size of sectors is measured using labor compensation rather than value added. Comparing the average contribution in Column K with Column H we see that our model-based approach and methodology to compute efficiency units combined lead to a measured between-industry contribution to the total change in the skill-premium that 17. percentage points higher (28.2\% vs 10.3\%, or 2.7 times higher). Comparing Columns G and H allows us to directly measure what fraction of these 17.8 percentage point difference is attributable to the human capital measurement (7.5 percentage points; 42\%). The share of the difference with KM due to our model-based approach is obtained by comparing the mid-range of the contribution in Column K with Column H (10.3 percentage points; 58\%).  
+
+\subsubsection*{Table 2 - Columns L: Model Counterfactuals Using EU KLEMS Data}
+We proceed to show that our quantitative difference with KM is still significant if we use EU KLEMS instead of World KLEMS data. To do so using EU KLEMS we compute the fractions of the total gap with KM that are due to human capital measurement and our model-based approach. The relative size of sectors is measured using labor compensation.\\
+
+Comparing the average contribution in Column L with Column J we see that our model-based approach and methodology to compute efficiency units combined lead to a measured between-industry contribution to the total change in the skill-premium that is 15.7 percentage points higher (2.0 times higher). Comparing Columns I and J allows us to directly measure what fraction of these 15.7 percentage point difference is attributable to the human capital measurement (6.4 percentage points; 41\%). The share of the difference with KM due to our model-based approach is obtained by comparing the mid-range of the contribution in Column L with Column H (9.3 percentage points; 59\%).  
+
+To summarize the results obtained so far, we have shown that our difference with KM is, roughly speaking, 40\% due to the way we measure human capital, and 60\% due to our general equilibrium model based approach. This does not depend on the underlying dataset we use, as it holds both for the EU KLEMS and the World KLEMS data.\\
+
+Continuing with the comparison with KM, in Table \ref{tab:KM_comparison_TabIII} we redo the same quantification, but using value added rather than labor compensation as measure of sector size. To be more precise, when we implement the KM shift-share analysis described in Equation \ref{eq:shift_share_km}, instead of measuring the change in the sector size $(\Delta E_{j})$ by the change in efficiency units employed in sector $j$, we do so by computing the change in the value added share of sector $j$. There is one subtlety behind this implementation in the case of KM. Since they focus in the change in the relative demand for factors at fixed prices, in their case we measure the change in sector size using value added evaluated at average prices for the period of interest. We label this measure as KM value added. In our case, we proceed in the same way as we do when we measure sector size by the total amount of efficiency units employed by a sector. Thus, we allow for prices to change and our measure of sector size is simply capture by its value added share. To differentiate our measure with the one in KM, we label ours as BKRV value added.\\
+
+The results for the shift-share analyses and model counterfactuals using value added as measure of sector size are presented in Table \ref{tab:KM_comparison_TabIII} below. Columns M, N, and R decompose the results presented in rows (iii), (ii), and (iv) in Table 5 in the paper. The detailed decomposition for row (i) in Table 5 of the paper is provided in column H of Table \ref{tab:KM_comparison_TabII}. Comparing column R with column N we can asses the total difference among our between-industry contribution and the one in KM, which amounts to 15.3 percentage points. This comprises the differences in human capital measurement and due to our model-based approach. Comparing columns M and N allows us to isolate the role of human capital measurement, which total 7.2 percentage points, or 47\% of the total difference. The remainder 53\% is due to the fact that our contribution of SBSC to the total change in the skill premium is carried out using model-based counterfactuals. A similar analysis can be carried out using EU KLEMS data. The results are presented in columns O, P, and S. In this case 58\% of the differences are due to measurement, and 42\% to out model-based approach.
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{landscape}
+\begin{table}[!t]
+\centering
+\begin{threepartable}
+\renewcommand\thetable{1}
+\centering
+\caption{\centering \textbf{Quantitative Comparison With Katz and Murphy 1992} \\The Role of Differences in Data Sources }
+\label{tab:KM_comparison_TabI}
+\begin{tabular}{lcccc}
+\hline \hline
+\multicolumn{1}{l}{}                                                           \multicolumn{5}{c}{\textbf{Shift-Share Analysis}}              \\ \hline
+\multicolumn{1}{l|}{Column}                                                                 & A          & B          & C         & D          \\ \hline
+\multicolumn{1}{l|}{Row in Table 5 of the Paper}                                            & -          & -          & -         & -          \\ \hline
+\multicolumn{1}{l|}{Source}                                                                 & CPS        & IPUMS-USA  & IPUMS-USA & WorldKLEMS \\
+\multicolumn{1}{l|}{Samples}                                                                & 1979-1987  & 1979-1989  & 1979-1989 & 1979-1989  \\
+\multicolumn{1}{l|}{Efficiency Units Methodology}                                           & KM         & KM         & KM        & KM         \\
+\multicolumn{1}{l|}{Industry Aggregation}                                                   & 50         & 31         & 31        & 31         \\
+\multicolumn{1}{l|}{Grouping Criterion: Sex, Class, and}                                    & Experience & Experience & Age       & Age        \\
+\multicolumn{1}{l|}{High Skill Industries$^{1}$}                                            & -          & -          & -         & -          \\
+\multicolumn{1}{l|}{Measure of the relative size of sectors:}                               & Hours      & Hours      & Hours     & Hours      \\ \hline
+\multicolumn{1}{l|}{}                                                                       &            &            &           &            \\ \hline
+\multicolumn{1}{l|}{ $(i) \ \ $ Between Industry Demand Shift$^{2}$}                        & 4.6\%      & 4.8\%      & 4.9\%     & 4.2\%      \\
+\multicolumn{1}{l|}{ $(ii) \  $ Change in the Supply of HS relative to LS Labor$^{2}$}      & 25.5\%     & 29.8\%     & 31.0\%    & 28.1\%     \\
+\multicolumn{1}{l|}{ $(iii)   $ Change in Skill-Premium$^{3}$}                              & 12.8\%     & 14.2\%     & 16.3\%    & 10.8\%     \\
+\multicolumn{1}{l|}{ $(iv) \  $ Elasticity of Substitution $(\sigma)$}                      & 1.41       & 1.41       & 1.41      & 1.41       \\ 
+\multicolumn{1}{l|}{ $(v) \ \ $ Total Demand Shift $\big( (iv) \text{x} (iii) + (ii) \big)$}& 43.5\%     & 49.8\%     & 54.0\%    & 43.3\%     \\
+\hline
+\multicolumn{1}{l|}{ $(vi) = (i)/(iv)$ Between-industry contribution}                       & 10.6\%     & 9.6\%      & 9.1\%     & 9.7\%      \\\hline \hline
+\end{tabular}
+\begin{tablenotes} \scriptsize
+\item{\textbf{1}}  Reported as $ln\Big(1+\Delta X^{d}_{ H/L } \Big)$.\\
+\item{\textbf{2}} Log change between the initial an final period: $ln\left(\frac{E_{H,T}}{E_{L,T}}\right)-ln\left(\frac{E_{H,1}}{E_{L,1}}\right)$.\\
+\item{\textbf{3}} Log change between the initial an final period: $ln\left(\frac{w_{H,T}}{w_{L,T}}\right)-ln\left(\frac{w_{H,1}}{w_{L,1}}\right)$.\\ \hline
+\end{tablenotes}
+\end{threepartable}
+\end{table}
+\end{landscape}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{landscape}
+\begin{table}[h!]
+\begin{threepartable}
+\renewcommand\thetable{2}
+\centering
+\caption{\centering \textbf{Quantitative Comparison With Katz and Murphy 1992} \\ The Roles of Human Capital Measurement and the Model Using Labor Compensation as a Measure of Sector Size}
+\label{tab:KM_comparison_TabII}
+\resizebox{1.4\textwidth}{!}{%
+\begin{tabular}{l| c c c c c c c  | c c  }
+\hline \hline
+                                                                  		& \multicolumn{7}{c|}{\textbf{Shift-Share Analysis}} & \multicolumn{2}{c}{\textbf{Model Counterfactuals}} \\ \hline
+Column                                                      			& D          & E          & F           & G           &  H            & I             & J             & K            & L             \\ \hline
+Row in Table 5 of the Paper                                             & -          & -          & -           & -           &  (i)          & -             & -             & -            & -             \\ \hline
+Source                                                      			& WorldKLEMS & WorldKLEMS & WorldKLEMS  & WorldKLEMS  & WorldKLEMS    & EUKLEMS       & EUKLEMS       & WorldKLEMS   & EUKLEMS       \\
+Period                                                   				& 1979-1989  & 1980-1990  & 1980-1990   & 1977-2005   & 1977-2005     & 1977-2005     & 1977-2005     & 1977-2005    & 1977-2005     \\
+Efficiency Units Methodology                							& KM         & BKRV       & BKRV        & BKRV        & KM            & BKRV          & KM            & BKRV         & BKRV          \\
+Industry Aggregation                             						& 31         & 31         & 2           & 2           & 2             & 2             & 2             & 2            & 2             \\
+Grouping Criterion: Sex, Class, and         						    & Age        & Age        & Age         & Age         & Age           & Age           & Age           & Age          & Age           \\
+High-Skill Industries$^{1}$                               				& 28,29,26,24 & 28,29,26,24 & 28,29,26,24 & 28,29,26,24 & 28,29,26,24 & 28,29,26,24  & 28,29,26,24 & 28,29,26,24 & 28,29,26,24 \\
+Measure of the Relative Size of Sectors                                 & Hours      & Compensation & Compensation & Compensation & Hours     & Compensation  & Hours & Compensation & Compensation  \\ \hline
+$(i)$ \ \ \ Between Industry Demand Shift$^{2}$                         & 4.2\%      & 9.4\%      & 10.3\%      & 20.4\%      & 10.8\%        & 24.2\%        & 16.4\%        & -            & -             \\
+$(ii)$ \ \  Change in the Supply of HS relative to LS Labor$^{3}$       & 28.1\%     & 25.0\%     & 25.0\%      & 65.7\%      & 64.2\%        & 69.2\%        & 68.8\%        & -            & -             \\
+$(iii)$ \   Change in Skill-Premium$^{4}$                               & 10.8\%     & 16.4\%     & 16.4\%      & 34.6\%      & 29.3\%        & 29.7\%        & 26.7\%        & -            & -             \\
+$(iv)$  \ \ Elasticity of Substitution $(\sigma)$                       & 1.41       & 1.41       & 1.41        & 1.41        & 1.41          & 1.41          & 1.41          & -            & -             \\ 
+$(v)$ \ \ \ Total Demand Shift $\big( (iv) \text{x} (iii) + (ii) \big)$ & 43.3\%     & 48.1\%     & 48.1\%      & 114.5\%     & 105.4\%       & 111.1\%       & 106.4\%       & -            & -             \\\hline
+$(vi) = (i)/(v)$ Between-industry contribution                          & 9.7\%      & 19.5\%     & 21.4\%      & 17.8\%      &  10.3\%       & 21.8\%        & 15.4\%    & 23.9\%-32.4\%    & 26.4\%-35.9\% \\\hline \hline
+\end{tabular}
+}
+\begin{tablenotes} \scriptsize
+\item{\textbf{1}}  Industry numbers correspond to the following ISIC Rev. 3 Codes and Descriptions: \textbf{24}: (J) Financial Intermediation, \textbf{26}: (71t74) Renting of Machinery and Equipment and Other Business Activities, \textbf{28}: (M) Education, and \textbf{29}: (N) Health and Social Work.\\
+\item{\textbf{2}}  Reported as $ln\Big(1+\Delta X^{d}_{ H/L } \Big)$.\\
+\item{\textbf{3}} Log change between the initial an final period: $ln\left(\frac{E_{H,T}}{E_{L,T}}\right)-ln\left(\frac{E_{H,1}}{E_{L,1}}\right)$.\\
+\item{\textbf{4}} Log change between the initial an final period: $ln\left(\frac{w_{H,T}}{w_{L,T}}\right)-ln\left(\frac{w_{H,1}}{w_{L,1}}\right)$.\\ \hline
+\end{tablenotes}
+\end{threepartable}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h!]
+\begin{threepartable}
+\renewcommand\thetable{3}
+\centering
+\caption{\centering \textbf{Quantitative Comparison With Katz and Murphy 1992} \\ The Roles of Human Capital Measurement and the Model Using Value Added as a Measure of Sector Size}
+\label{tab:KM_comparison_TabIII}
+\resizebox{1.35\textwidth}{!}{%
+\begin{tabular}{l| c c c c | c c c}
+\hline \hline
+                                                                  		& \multicolumn{4}{c|}{\textbf{Shift-Share Analysis}}    & \multicolumn{3}{c}{\textbf{Model Counterfactuals}} \\ \hline
+Column                                                      			& M              &  N            &  O            &  P            & Q             & R             & S         \\ \hline
+Row in Table 5 of the Paper                                          	& (iii)          &  (ii)         &  -            &  -            & -             & (iv)          & -         \\ \hline
+Source                                                      			& WorldKLEMS     & WorldKLEMS    & EUKLEMS       & EUKLEMS       & WorldKLEMS    & WorldKLEMS    & EUKLEMS    \\
+Period                                                   				& 1977-2005      & 1977-2005     & 1977-2005     & 1977-2005     & 1980-1990     & 1977-2005     & 1977-2005   \\
+Efficiency Units Methodology                							& BKRV           & KM            & BKRV          & KM            & BKRV          & BKRV          & BKRV        \\
+Industry Aggregation                             						& 2              & 2             & 2             & 2             & 2             & 2             & 2           \\
+Grouping Criterion: Sex, Class, and         						    & Age            & Age           & Age           & Age           & Age           & Age           & Age         \\
+High-Skill Industries$^{1}$                               				& 28,29,26,24    & 28,29,26,24   & 28,29,26,24   & 28,29,26,24   & 28,29,26,24   & 28,29,26,24   & 28,29,26,24 \\
+Measure of the Relative Size of Sectors                                 & BKRV Value Added & KM Value Added & BKRV Value Added & KM Value Added & Value Added & Value Added  & Value Added \\\hline
+                                                                        &                &               &               &               &               &               &          \\ \hline
+$(i)$ \ \ \ Between Industry Demand Shift$^{2}$                         & 14.8\%         & 6.0\%         & 17.0\%        & 5.0\%         & -             & -             & -        \\
+$(ii)$ \ \  Change in the Supply of HS relative to LS Labor$^{3}$       & 65.7\%         & 64.2\%        & 69.2\%        & 68.8\%        & -             & -             & -        \\
+$(iii)$ \   Change in Skill-Premium$^{4}$                               & 34.6\%         & 29.5\%        & 29.7\%        & 26.7\%        & -             & -             & -        \\
+$(iv)$  \ \ Elasticity of Substitution $(\sigma)$                       & 1.41           & 1.41          & 1.41          & 1.41          & -             & -             & -        \\ 
+$(v)$ \ \ \ Total Demand Shift $\big( (iv) \text{x} (iii) + (ii) \big)$ & 114.5\%        & 105.8\%       & 111.1\%       & 106.4\%       & -             & -             & -        \\\hline
+$(vi) = (i)/(v)$ Between-industry contribution                          & 12.9\%         & 5.7\%         & 15.3\%        & 4.7\%         & 22.1\%-24.4\% & 18.0\%-24.0\% & 19.9\%-26.6\% \\\hline \hline
+\end{tabular}
+}
+\begin{tablenotes} \scriptsize
+\item{\textbf{1}}  Industry numbers correspond to the following ISIC Rev. 3 Codes and Descriptions: \textbf{24}: (J) Financial Intermediation, \textbf{26}: (71t74) Renting of Machinery and Equipment and Other Business Activities, \textbf{28}: (M) Education, and \textbf{29}: (N) Health and Social Work.\\
+\item{\textbf{2}}  Reported as $ln\Big(1+\Delta X^{d}_{ H/L } \Big)$.\\
+\item{\textbf{3}} Log change between the initial an final period: $ln\left(\frac{E_{H,T}}{E_{L,T}}\right)-ln\left(\frac{E_{H,1}}{E_{L,1}}\right)$.\\
+\item{\textbf{4}} Log change between the initial an final period: $ln\left(\frac{w_{H,T}}{w_{L,T}}\right)-ln\left(\frac{w_{H,1}}{w_{L,1}}\right)$.\\ \hline
+\end{tablenotes}
+\end{threepartable}
+\end{table}
+\end{landscape}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{comment}
+Column B
+Between Industry Demand Shift:                          Demand_shift_KM_IPUMS_E_KM_Experience.do
+Change in Relative Supply of College to HS Equivalents: Demand_shift_KM_IPUMS_E_KM_Experience.do (Lines 159-166)
+Total Change in Wage Premium:                           KM_wage_premium_ipums_exp.do
+       
+Column C
+Between Industry Demand Shift:                          Demand_shift_KM_IPUMS_E_KM_Age.do
+Change in Relative Supply of College to HS Equivalents: Demand_shift_KM_IPUMS_E_KM_Age.do (Lines 155-162)
+Total Change in Wage Premium:                           KM_wage_premium_ipums_age.do
+\end{comment}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Skill-Intensive Sector Definition Robustness.} \label{sec:hs_labor_intensity}
+We here describe in further detail how we assign the thirty one industries in the World KLEMS database into the high- and low-skill sector. Doing so requires a measure of skill intensity at the sectoral level. Our primary measure of skill intensity is the share of labor compensation that corresponds to high-skill labor in a given sector, where high-skill workers are those with college complete or more. As a robustness check we explore how our definition of the high-skill intensive sector depends on the specific skill intensity measure chosen. To that end, we also compute skill intensity by industry using the share of total hours worked and the share of total employment that correspond to high-skill labor. The results are presented in Table \ref{tab:hs_shares} below.\\
+
+
+\begin{table}[!h]
+\centering
+\caption{\centering Share of High-Skill Labor by Industry Under Different Employment Measures \\ (World KLEMS Data)}
+\label{tab:hs_shares}
+\resizebox{1.00\textwidth}{!}{%
+\begin{tabular}{cc|lcccccc}
+\hline \hline
+\multicolumn{2}{c|}{}                                         & \multicolumn{1}{c}{}                                                                        & \multicolumn{6}{c}{\textbf{Average 1977-2005}}                                                                                                                  \\ \cline{4-9} 
+\multicolumn{2}{c|}{\multirow{-2}{*}{\textbf{Industry Code}}} & \multicolumn{1}{c}{}                                                                        & \multicolumn{2}{c|}{\textbf{Compensation}}                & \multicolumn{2}{c|}{\textbf{Hours}}                       & \multicolumn{2}{c}{\textbf{Employment}} \\ \cline{4-9} 
+World KLEMS                       & ISIC Rev3                 & \multicolumn{1}{c}{\multirow{-3}{*}{\textbf{Industry Label}}}                               & Share  & \multicolumn{1}{c|}{Rank}                        & Share  & \multicolumn{1}{c|}{Rank}                        & Share               & Rank              \\ \hline
+28                                & M                         & \multicolumn{1}{l|}{Education}                                      & 76.8\% & \multicolumn{1}{c|}{1.0} & 65.0\% & \multicolumn{1}{c|}{1.0} & 59.0\%              & 1.0               \\
+26                                & 71t74                     & \multicolumn{1}{l|}{Renting of M\&Eq and other business activities} & 51.3\% & \multicolumn{1}{c|}{2.4} & 39.2\% & \multicolumn{1}{c|}{2.3} & 35.4\%              & 2.5               \\
+24                                & J                         & \multicolumn{1}{l|}{Financial Intermediation}                       & 50.4\% & \multicolumn{1}{c|}{2.9} & 34.9\% & \multicolumn{1}{c|}{3.3} & 32.0\%              & 3.4               \\
+29                                & N                         & \multicolumn{1}{l|}{Health and social work}                         & 45.4\% & \multicolumn{1}{c|}{4.4} & 31.2\% & \multicolumn{1}{c|}{4.7} & 28.7\%              & 4.7               \\
+8                                 & 24                        & \multicolumn{1}{l|}{Chemicals and chemical products}                                        & 44.6\% & \multicolumn{1}{c|}{5.0}                         & 33.2\% & \multicolumn{1}{c|}{4.6}                         & 30.9\%              & 4.3               \\
+25                                & 70                        & \multicolumn{1}{l|}{Real estate activities}                                                 & 41.9\% & \multicolumn{1}{c|}{6.1}                         & 29.5\% & \multicolumn{1}{c|}{6.0}                         & 26.8\%              & 6.5               \\
+13                                & 30t33                     & \multicolumn{1}{l|}{Electrical and optical equipment}                                       & 39.9\% & \multicolumn{1}{c|}{7.3}                         & 27.8\% & \multicolumn{1}{c|}{7.6}                         & 25.8\%              & 7.7               \\
+27                                & L                         & \multicolumn{1}{l|}{Public admin and Defense; Social Security}                              & 37.8\% & \multicolumn{1}{c|}{8.0}                         & 24.8\% & \multicolumn{1}{c|}{9.7}                         & 22.7\%              & 9.8               \\
+7                                 & 23                        & \multicolumn{1}{l|}{Coke refined petroleum products and nuclear fuel}                       & 36.9\% & \multicolumn{1}{c|}{8.6}                         & 27.6\% & \multicolumn{1}{c|}{7.4}                         & 26.5\%              & 6.7               \\
+19                                & 50                        & \multicolumn{1}{l|}{Wholesale Trade}                                                        & 34.5\% & \multicolumn{1}{c|}{10.4}                        & 24.4\% & \multicolumn{1}{c|}{10.4}                        & 22.6\%              & 10.1              \\
+15                                & 36t37                     & \multicolumn{1}{l|}{Manufacturing nec; recycling}                                           & 32.2\% & \multicolumn{1}{c|}{11.7}                        & 20.9\% & \multicolumn{1}{c|}{14.8}                        & 18.9\%              & 15.4              \\
+6                                 & 21t22                     & \multicolumn{1}{l|}{Pulp paper paper products printing and publishing}                      & 32.2\% & \multicolumn{1}{c|}{12.0}                        & 23.2\% & \multicolumn{1}{c|}{11.7}                        & 21.4\%              & 11.7              \\
+30                                & O                         & \multicolumn{1}{l|}{Other community social and personal services}                           & 30.3\% & \multicolumn{1}{c|}{13.1}                        & 23.3\% & \multicolumn{1}{c|}{11.6}                        & 20.7\%              & 12.7              \\
+2                                 & C                         & \multicolumn{1}{l|}{Mining and quarrying}                                                   & 29.1\% & \multicolumn{1}{c|}{14.0}                        & 18.1\% & \multicolumn{1}{c|}{16.2}                        & 18.0\%              & 15.5              \\
+16                                & E                         & \multicolumn{1}{l|}{Electricity gas and water supply}                                       & 27.8\% & \multicolumn{1}{c|}{15.2}                        & 22.0\% & \multicolumn{1}{c|}{13.0}                        & 20.9\%              & 12.6              \\
+14                                & 34t35                     & \multicolumn{1}{l|}{Transport equipment}                                                    & 27.1\% & \multicolumn{1}{c|}{15.6}                        & 19.9\% & \multicolumn{1}{c|}{15.6}                        & 18.8\%              & 15.3              \\
+23                                & 64                        & \multicolumn{1}{l|}{Post and telecommunications}                                            & 26.2\% & \multicolumn{1}{c|}{16.8}                        & 21.8\% & \multicolumn{1}{c|}{13.3}                        & 20.6\%              & 13.0              \\
+20                                & 52                        & \multicolumn{1}{l|}{Retail Trade}                                                           & 24.1\% & \multicolumn{1}{c|}{18.2}                        & 15.9\% & \multicolumn{1}{c|}{18.8}                        & 13.4\%              & 19.8              \\
+12                                & 29                        & \multicolumn{1}{l|}{Machinery nec}                                                          & 23.9\% & \multicolumn{1}{c|}{18.6}                        & 15.8\% & \multicolumn{1}{c|}{19.0}                        & 14.9\%              & 18.8              \\
+3                                 & 15t16                     & \multicolumn{1}{l|}{Food products beverages and tobacco}                                    & 22.6\% & \multicolumn{1}{c|}{20.1}                        & 14.1\% & \multicolumn{1}{c|}{21.3}                        & 12.4\%              & 21.6              \\
+22                                & 60t63                     & \multicolumn{1}{l|}{Transport and storage}                                                  & 21.0\% & \multicolumn{1}{c|}{21.8}                        & 15.0\% & \multicolumn{1}{c|}{19.9}                        & 14.7\%              & 18.6              \\
+9                                 & 25                        & \multicolumn{1}{l|}{Rubber and plastics products}                                           & 20.5\% & \multicolumn{1}{c|}{21.9}                        & 12.7\% & \multicolumn{1}{c|}{23.1}                        & 11.5\%              & 23.2              \\
+10                                & 26                        & \multicolumn{1}{l|}{Other non-metallic mineral products}                                    & 18.3\% & \multicolumn{1}{c|}{24.4}                        & 11.9\% & \multicolumn{1}{c|}{24.2}                        & 11.1\%              & 24.0              \\
+18                                & 51                        & \multicolumn{1}{l|}{Motor Vehicles, Motorcycles, and Fuel Trade}                            & 18.1\% & \multicolumn{1}{c|}{24.7}                        & 13.4\% & \multicolumn{1}{c|}{21.8}                        & 11.7\%              & 22.3              \\
+11                                & 27t28                     & \multicolumn{1}{l|}{Basic metals and fabricated metal products}                             & 18.0\% & \multicolumn{1}{c|}{24.8}                        & 11.8\% & \multicolumn{1}{c|}{24.5}                        & 11.1\%              & 23.8              \\
+1                                 & AtB                       & \multicolumn{1}{l|}{Agriculture hunting forestry and fishing}                               & 16.9\% & \multicolumn{1}{c|}{25.4}                        & 10.4\% & \multicolumn{1}{c|}{27.0}                        & 9.3\%               & 26.7              \\
+4                                 & 17t19                     & \multicolumn{1}{l|}{Textiles textile products leather and footwear}                         & 17.2\% & \multicolumn{1}{c|}{26.3}                        & 8.3\%  & \multicolumn{1}{c|}{28.9}                        & 7.6\%               & 28.6              \\
+21                                & H                         & \multicolumn{1}{l|}{Hotels and restaurants}                                                 & 15.8\% & \multicolumn{1}{c|}{27.1}                        & 10.4\% & \multicolumn{1}{c|}{26.9}                        & 8.1\%               & 28.6              \\
+17                                & F                         & \multicolumn{1}{l|}{Construction}                                                           & 14.6\% & \multicolumn{1}{c|}{28.5}                        & 10.4\% & \multicolumn{1}{c|}{27.1}                        & 9.3\%               & 26.8              \\
+5                                 & 20                        & \multicolumn{1}{l|}{Wood and products of wood and cork}                                     & 14.3\% & \multicolumn{1}{c|}{28.9}                        & 8.4\%  & \multicolumn{1}{c|}{29.3}                        & 7.6\%               & 29.1              \\
+31                                & P                         & \multicolumn{1}{l|}{Private households with employed persons}                               & 8.7\%  & \multicolumn{1}{c|}{31.0}                        & 5.3\%  & \multicolumn{1}{c|}{31.0}                        & 5.0\%               & 31.0              \\ \hline
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Average}}                                                       & 29.6\% & \multicolumn{1}{c|}{-}                           & 21.0\% & \multicolumn{1}{c|}{-}                           & 19.3\%              & -                 \\
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Percentile 10}}                                                 & 15.8\% & \multicolumn{1}{c|}{-}                           & 10.4\% & \multicolumn{1}{c|}{-}                           & 8.1\%               & -                 \\
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Percentile 25}}                                                 & 18.2\% & \multicolumn{1}{c|}{-}                           & 12.3\% & \multicolumn{1}{c|}{-}                           & 11.3\%              & -                 \\
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Median}}                                                        & 26.2\% & \multicolumn{1}{c|}{-}                           & 18.1\% & \multicolumn{1}{c|}{-}                           & 18.0\%              & -                 \\
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Percentile 75}}                                                 & 32.2\% & \multicolumn{1}{c|}{-}                           & 23.2\% & \multicolumn{1}{c|}{-}                           & 21.2\%              & -                 \\
+\multicolumn{1}{l}{\textbf{}}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{\textbf{Percentile 90}}                                                 & 37.8\% & \multicolumn{1}{c|}{-}                           & 27.6\% & \multicolumn{1}{c|}{-}                           & 25.8\%              & -                 \\ \hline \hline
+\end{tabular}
+}
+\end{table}
+
+The first two columns of Table \ref{tab:hs_shares} after the industry labels show the average share of high-skill labor compensation by industry and the average rank of an industry in terms of high-skill labor compensation between 1977 and 2005. We choose Education, Renting of Machinery and Equipment and Other Business Activities, Financial Intermediation, and Health and Social Work to be the industries in the high-skill intensive sector. These  four  have  the  highest  average  share  of  high-skill  labor  compensation during this period, exhibiting an average rank of 1.0, 2.4, 2.9, and 4.4, respectively. The corresponding average shares of high-skill labor compensation are 76.8\%, 51.3\%, 50.4\%, and 45.4\%, respectively. The next  two  highest  ranked  sectors  are  Chemicals  and  Chemical  Products  and  Real  Estate  Activities  with average ranks of 5.0 and 6.1 and average shares of 44.6\% and 41.9\%, respectively.  No other sector has an average rank below 7.0 or an average share of high-skill labor compensation over 40.0\%.\\
+
+The third and fourth, and the fifth and sixth columns of Table \ref{tab:hs_shares} after the industry labels show the average ranks and the average high-skill labor shares when we use total hours worked and total employment instead of labor compensation as measured of skill-intensity. Overall, the three measures are highly correlated. Our high-skill industries are also amongst the highest ranked when we use total hours and employment as a measure of skill intensity, but Chemicals and Chemical Products gains relevance relative to Health and Social Work.\\
+
+To asses the possibility that our results might be influenced by where we draw the line that separates industries from the high- and the low-skill sector, we re-do our empirical and quantitative analysis using two alternative broader definitions of the high-skill intensive sector. In the first alternative, we assign Chemicals and Chemical Products and Real Estate to the high-skill intensive sector, while in our second alternative we add Chemicals and Chemical Products, Real Estate, Electrical and Optical Equipment, and Public Administration and Defense to our the fours industries in the benchmark definition of the high-skill intensive sector.\\
+
+We start by exploring how the main facts presented in the empirical analysis are affected by these two broader definitions of the high-skill intensive sector. To facilitate the comparison, Figures \ref{fig:figure1} and \ref{fig:figure2} present the evolution of the value added share, the labor compensation share, and the relative price of the the high-skill intensive sector across development for the benchmark definition of the high-skill intensive sector. To be clear, these pictures replicate Figures 1 and 2 in the paper. Figures \ref{fig:figure1_alt1} and \ref{fig:figure2_alt1}, and \ref{fig:figure1_alt2} and \ref{fig:figure2_alt2} present the same facts under the two alternative expanded definitions of the high-skill intensive sector. Compared to the benchmark definition, the facts for labor compensation are, roughly speaking, the same. The relationships between value added shares and development are even stronger under both alternatives, being the $R^{2}$s marginally higher in both cases. In turn, the relationship between the relative price of the high-skill intensive sector and GDP per capita \footnote{GDP per capita is constructed using PWT 9.0. See \citet{FI_PWT90}.} becomes weaker, particularly more so in the second case. While in the benchmark and the first alternative definitions of the high-skill intensive sector the estimated relationships imply that relative price of the high-skill intensive sector more than doubles as countries move from a GDP per capita of 10,000 US\$ to a GDP per capita of 30,000 US\$, in the second alternative the relative price rises by 55\%.\\ 
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Structural Change by Skill Intensity and Economic Development}}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure1_benchmark.png}
+\label{fig:figure1}
+\end{figure}
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Relative Price of the Skill-Intensive Sector and Economic Development}}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure2_benchmark.png}
+\label{fig:figure2}
+\end{figure}
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Structural Change by Skill Intensity and Economic Development} \\ (Including Chemicals and Chemical Products and Real Estate in the High-Skill Intensive Sector)}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure1_Alt1.png}
+\label{fig:figure1_alt1}
+\end{figure}
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Relative Price of the Skill-Intensive Sector and Economic Development} \\ (Including Chemicals and Chemical Products and Real Estate in the High-Skill Intensive Sector)}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure2_Alt1.png}
+\label{fig:figure2_alt1}
+\end{figure}
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Structural Change by Skill Intensity and Economic Development} \\ (Including Chemicals and Chemical Products, Real Estate, Electrical and Optical Equipment, and Public Administration and Defense in the High-Skill Intensive Sector)}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure1_Alt2.png}
+\label{fig:figure1_alt2}
+\end{figure}
+
+\begin{figure}[!h] 
+\caption{\centering \textbf{Relative Price of the Skill-Intensive Sector and Economic Development} \\ (Including Chemicals and Chemical Products, Real Estate, Electrical and Optical Equipment, and Public Administration and Defense in the High-Skill Intensive Sector)}
+\centering
+\includegraphics[width=0.70\linewidth]{Figures/figure2_Alt2.png}
+\label{fig:figure2_alt2}
+\end{figure}\\
+\clearpage 
+
+Table \ref{tab:robustness_HS_Sector} presents the effects of technological change on the skill premium under alternative sets of industries included in the high-skill intensive sector. It shows that the contribution of Skill-Biased Technical Change to the total change in the skill premium is roughly unchanged under these three alternative definitions -in all cases the mid-range of the contribution is around 20\%.\\
+
+\begin{table}[!h]
+\begin{threepartable}
+\centering
+\caption{\centering Effects of Technological Change on the Skill Premium Under Alternative High-Skill Intensive Sector Definitions}
+\label{tab:robustness_HS_Sector}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|c|cc}
+\hline\hline
+                                                    & \textbf{Benchmark}    & \multicolumn{2}{c}{\textbf{Alternative Definition for the HS Intensive Sector}} \\ \hline
+Dataset                                             & World KLEMS           & World KLEMS                & World KLEMS                     \\
+Sector Size Measure                                 & Value Added           & Value Added                & Value Added                     \\
+Industries in HS Sector$^{1}$                       & 28,29,26,24           & 28,29,26,24,8,25           & 28,29,26,24,8,25,27,13          \\ \hline
+$\rho$                                              & 1.527                 & 1.527                      & 1.527                           \\
+$\varepsilon$                                       & 0.100                 & 0.100                      & 0.100                           \\ \hline
+$w_{H,0}$                                           & 1.328                 & 1.328                      & 1.328                           \\
+$w_{H,T}$                                           & 1.877                 & 1.877                      & 1.877                           \\
+$w_{H,T}$ - changes in $f$ only                     & 0.872                 & 0.883                      & 0.869                           \\
+$w_{H,T}$ - changes in $f$ and $A_{j}$ only         & 1.052                 & 1.062                      & 1.018                           \\
+$w_{H,T}$ - changes in $f$ and $\alpha_{j}$ only    & 1.636                 & 1.624                      & 1.627                           \\ \hline
+\% Contribution, no SBSC                            & 0.240                 & 0.255                      & 0.248                           \\
+\% Contribution, only SBSC                          & 0.180                 & 0.181                      & 0.148                           \\ \hline
+\% Contribution SBSC                                & 18.0\%-24.0\%         & 18.1\%-25.5\%              & 14.8\%-24.8\%                   \\ \hline \hline
+\end{tabular}%
+}
+\begin{tablenotes} \scriptsize
+\item{\textbf{1}}  Industry numbers correspond to the following ISIC Rev. 3 Codes and Descriptions: \textbf{24}: (J) Financial Intermediation, \textbf{26}: (71t74) Renting of Machinery and Equipment and Other Business Activities, \textbf{28}: (M) Education, \textbf{29}: (N) Health and Social Work, \textbf{8}: (24) Chemicals and Chemical Products, \textbf{25}: (70) Real Estate, \textbf{27}: (L) Public Administration and Defense, and \textbf{8}: (24) Chemicals and Chemical Products.\\
+\end{tablenotes}
+\end{threepartable}
+\end{table}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+\newpage
+\section{Robustness Checks}
+In this section we summarize a series of robustness checks we perform to our benchmark results. For concreteness we focus on the sensitivity of our exercise of the effects of technological change on the skill premium, presented on Table 5 in the paper. The results are presented in Table \ref{tab:robustness_checks} below.\\
+
+The first column of Table \ref{tab:robustness_checks} reproduces the results of the exercise under our benchmark calibration (i.e. $\rho = 1.53$ and $\varepsilon=0.10$). The second and third columns explore how the results change when we use World KLEMS data and compensation as a measure of sector size, and EU KLEMS data while keeping value added as a measure of sector size. In the first case, the mid-range of the SBSC contribution rises to 27.9\%, due to the fact that the expansion of the high-skill intensive sector is higher when measured by using labor compensation rather than value added ($0.201$ p.p. vs. $0.138$ p.p.). In the second case, the mid-range of the SBSC contribution rises to 22.6\%. This is purely due to data differences, since EU KLEMS data are subject to a different adjustment procedure than the World KLEMS.\\
+
+The fourth and fifth column of Table \ref{tab:robustness_checks} explore how the results change when we change the set of industries included in the high-skill intensive sector. This is explained in further detail in Section \ref{sec:hs_labor_intensity} above. These two alternative definitions of the high-skill intensive sector lead to a mid-range SBSC contribution that is, roughly speaking, 1 percentage point higher and lower, respectively. We conclude that our results are robust to the inclusion of a broader set of industries in the high-skill intensive sector.\\
+
+In the last to columns of Table \ref{tab:robustness_checks} we explore using an alternative technology split. In these exercises we redefine the sector-specific technological growth parameters ($A_{j}$s) so that we remove the direct and indirect effects of the skill-biased parameters ($\alpha_{j}$s) on output. To be precise, the $A_{j}$ are decomposed into a skill-biased structural change parameter $\left(A^{SBSC}\right)$ and a skill-biased technical change parameter $\left(A^{SBTC}\right)$, so that the latter offsets the effects of ($\alpha_{j}$s) on output $A_{j,t}=A_{j,0} \cdot A^{SBSC}_{j,t} \cdot A^{SBTC}_{j,t}$, with $A^{SBSC}_{j,0}=A^{SBTC}_{j,0}=1$. This alternative split in the technological parameters does not change our results significantly, independent of the measure of sector size we use. As a consequence, we conclude that our results are robust to controlling for the effects of the $\alpha_{j}$s on growth.\\
+
+\begin{landscape}
+\begin{table}[!h]
+\begin{threepartable}
+\centering
+\caption{\centering Robustness Checks to the Effects of Technological Change on the Skill Premium}
+\label{tab:robustness_checks}
+\resizebox{1.4\textwidth}{!}{%
+\begin{tabular}{l|c|cc|cc|cc}
+\hline\hline
+& \multirow{2}{*}{\textbf{Benchmark Result}} & \multicolumn{6}{c}{\textbf{Robustness Checks}}  \\ \cline{3-8} &  & \multicolumn{2}{c|}{\textit{Alternative Datasets}} & \multicolumn{2}{c|}{\textit{Alternative Definition for the HS Sector}} & \multicolumn{2}{c}{\textit{Alternative Technology Split$^{2}$}} \\ \hline
+Dataset             & World KLEMS        & World KLEMS      & EU KLEMS             & World KLEMS                    & World KLEMS       & World KLEMS    & World KLEMS  \\
+Sector Size Measure & Value Added        & Compensation     & Value Added          & Value Added                    & Value Added       & Value Added    & Compensation \\
+Industries in HS Sector$^{1}$ & 28,29,26,24 & 28,29,26,24   & 28,29,26,24          & 28,29,26,24,8,25               & 28,29,26,24,8,25,27,13 & 28,29,26,24  & 28,29,26,24  \\ \hline
+$\rho$                        & 1.527       & 1.527         & 1.527                & 1.527                          & 1.527             & 1.527          & 1.527            \\
+$\varepsilon$                 & 0.100       & 0.100         & 0.100                & 0.100                          & 0.100             & 0.100          & 0.100        \\ \hline
+$w_{H,0}$                     & 1.328       & 1.328         & 1.415                & 1.328                          & 1.328             & 1.328          & 1.328        \\
+$w_{H,T}$                     & 1.877       & 1.877         & 1.903                & 1.877                          & 1.877             & 1.877          & 1.877         \\
+$w_{H,T}$ - changes in $f_{i}$ only & 0.872 & 0.834         & 0.906                & 0.883                          & 0.869             & 0.872          & 0.834          \\
+$w_{H,T}$ - changes in $f_{i}$ and $A_{j}$ only & 1.052   & 1.080 & 1.102          & 1.062                          & 1.018             & 1.031          & 1.043          \\
+$w_{H,T}$ - changes in $f_{i}$ and $\alpha_{j}$ only  & 1.636 & 1.541  & 1.648     & 1.624                          & 1.627             & 1.674          & 1.611        \\ \hline
+\% Contribution, no SBSC      & 0.240        & 0.322        & 0.256                & 0.255                          & 0.248             & 0.202      & 0.255 \\
+\% Contribution, only SBSC    & 0.180        & 0.236        & 0.196                & 0.181                          & 0.148             & 0.158        & 0.200 \\ \hline
+\% Contribution SBSC          & 18.0-24.0    & 23.6-32.2    & 19.6-25.6            & 18.1-25.5                      & 14.8-24.8         & 15.8-20.2     & 20.0-25.5 \\ \hline \hline   
+\end{tabular}%
+}
+\begin{tablenotes} \scriptsize
+\item{\textbf{1}}  Industry numbers correspond to the following ISIC Rev. 3 Codes and Descriptions: \textbf{24}: (J) Financial Intermediation, \textbf{26}: (71t74) Renting of Machinery and Equipment and Other Business Activities, \textbf{28}: (M) Education, \textbf{29}: (N) Health and Social Work, \textbf{8}: (24) Chemicals and Chemical Products, \textbf{25}: (70) Real Estate, \textbf{27}: (L) Public Administration and Defense, and \textbf{13}: (30t33) Electrical and Optical Equipment.\\
+\item{\textbf{2}} These exercises consist of modifying the $A$s so as to remove not only the direct effects of the $\alpha$s on output but also the indirect (GE) effects. \hline
+
+\end{tablenotes}
+\end{threepartable}
+\end{table}
+\end{landscape}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+\newpage
+\section{Sectoral Variation in $\rho$}
+
+For the results in the paper we calibrated the value of $\rho =1.53$, which is consistent with the analysis in \citet{KatMur92} using our data and extended to a two sector model, i.e., by running the regression in equation 8 in the paper and using equation 6 in the paper. However, we note that the estimates of equation 8 in the paper are somewhat sensitive to the period, ranging from $-0.50$ to $-0.75$. For this reason we also consider a wider range of values for $\rho $ to assess the extent to which the above conclusions are robust to variation in this parameter.\\
+
+We consider two alternative values of $\rho $, corresponding to higher and lower elasticities of substitution. Specifically, we consider $\rho =1.00$ and $\rho =2.50$, which are consistent with a coefficient in equation 8 in the paper of -1.05 and -0.44, respectively. In each case we redo the calibration procedure as before. While the value of $\rho $ does affect the quantitative findings, it leaves our main message largely unchanged. For example, focusing on the case of $\varepsilon =0.10$ we find that when $\rho =1.00$, the share of changes in the skill premium due to technical change that are accounted for by changes in the $A_{jt}$ is $21\%$ and $32\%$ from the two methods. When $\rho =2.5$ the corresponding values are $14\%$ and $17\%$. We conclude that our main finding of a significant role for changes in demand composition induced by
+technical change in accounting for changes in the skill premium is robust to considering a wide range of values for $\rho $, though higher values of this elasticity parameter do lead to declines in the estimated role played by demand composition.\\
+
+Our analysis has assumed that the value of $\rho$ is the same in both sectors. Absent any empirical evidence on the extent of heterogeneity in $\rho $ across sectors, this seemed a natural benchmark. However, \citet{Res13} suggests that the elasticity of substitution between high and
+low-skilled workers may be lower in services. It is therefore important to  assess whether our results are sensitive to the assumption of $\rho$ being constant across sectors. To do this we redo our exercise for several specifications in which we allow the two values of $\rho$ to vary across sectors, allowing for the ratio $\rho_{G}/\rho_{S}$ to be both larger and smaller than one. In all cases we assume that the weighted average of the two elasticities \ -$(H_{G}/H)\rho_{G}+(H_{S}/H)\rho_{S}$- \ is equal to $1.53$ when evaluated at the initial factor shares, so that our analysis can be interpreted as assessing the effect of heterogeneity holding the aggregate elasticity of substitution constant. We consider values for $\rho_{S}$ of $1.00$, $1.25$, $1.75$, and $2.00$, which lead to implied values for $\rho_{G}$ of $1.7$, $1.62$, $1.45$, and $1.37$. Table 7 reports the same statistics as in Table 5 in the paper, focusing on the case of $\varepsilon =0.10$.
+
+\begin{center}
+{\small 
+\begin{tabular}{cccccc}
+\multicolumn{6}{c}{Table 7} \\ 
+\multicolumn{6}{c}{The Effect of Sectoral Variation in $\rho $} \\ 
+\multicolumn{6}{c}{US, 1977-2005} \\ \hline\hline
+& $\frac{\rho_{S}}{\rho_{G}}=0.59$ & $\frac{\rho_{S}}{\rho_{G}}=0.77$ & $%
+\frac{\rho_{S}}{\rho_{G}}=1.00$ & $\frac{\rho_{S}}{\rho_{G}}=1.20$ & $%
+\frac{\rho_{S}}{\rho_{G}}=1.46$ \\ \hline
+$w_{H,0}$ & $1.33$ & $1.33$ & $1.33$ & $1.33$ & $1.33$ \\ 
+$w_{H,T}$ & $1.88$ & $1.88$ & $1.88$ & $1.88$ & $1.88$ \\ 
+\multicolumn{5}{c}{Counterfactual $w_{H,T}$} &  \\ 
+changes in: $f_{i}$ only & $0.86$ & $0.87$ & $0.88$ & $0.88$ & $0.88$ \\ 
+\quad \quad $f_{i}$ and $A_{j}$ only & $1.01$ & $1.03$ & $1.05$ & $1.07$ & $%
+1.08$ \\ 
+\quad \quad $f_{i}$ and $\alpha _{j}$ only & $1.64$ & $1.64$ & $1.64$ & $%
+1.63 $ & $1.63$ \\ \hline\hline
+\end{tabular}
+}
+\end{center}
+
+For ease of comparison, the third column repeats the results from our
+benchmark specification. For values of $\rho_{S}/\rho_{G}<1$ the
+implications are affected very little, and to the extent that a very large
+value of $\rho_{S}/\rho_{G}$ influences the quantitative results, it
+yields a larger role for the demand effects that we focus on (between $20\%$
+and $25\%$). Noting that we are considering a very wide range of variation
+in the relative values of $\rho $, we conclude that our results are quite
+robust to variation in $\rho $ across sectors.
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Model Validation Using Cross-Country Data}
+
+Our calibration procedure assigned parameter values by targeting the same
+number of moments as there were parameters. While both the production
+structure and our method for inferring technological change are very
+standard, we inferred values for utility function parameters by requiring
+that the model match the beginning and final values for sectoral valued
+added shares. If our utility function were misspecified in an important way,
+this procedure would still allow us to fit the initial and final sectoral
+value added shares, but in this case we might be wary of using our
+calibrated specification for the counterfactual exercises.
+
+One simple test of the specification is to consider its ability to fit not
+only the two endpoints of our sample, but also the entire time series.
+Unfortunately this is not a very stringent test for the period we are
+studying, since the key series in our analysis are fairly linear, and the
+model is able to match them fairly well.
+
+\begin{figure}[!hbt]
+\centering
+\caption{\centering \textbf{Model Fit in a Panel of Countries}\\ Structural Change (left panel) and the Skill Premium (right panel)}
+\includegraphics[width=0.70\linewidth]{Figures/figure3.pdf} 
+\label{fig:figure3}
+\end{figure}
+
+As a somewhat more stringent test, we turn to cross country data. For this
+exercise we use data from the following ten countries: Australia, Austria,
+Belgium, Denmark, Germany, Italy, Japan, the Netherlands, Spain and the
+United Kingdom \footnote{%
+The set of countries that we use in this exercise is smaller than those in the sample
+in Section 2 of the paper as some of the countries do not have all of the data required
+for the exercise carried out in this section.}. We assume that the utility
+function for each country is the same as the one implied by our benchmark
+calibration with $\rho =1.53$ and $\varepsilon =0.10$, i.e., we impose the
+implied values for $a_{G}$ and $\bar{c}_{S}$. Additionally, we assume that $\rho$ 
+is the same for all countries. However, using the same procedures as
+earlier, for each country we measure the relative supply of skilled labor
+from the data and we use our model to infer the time series for
+technological change. Because preference parameters are imported from the
+calibration using US data, we have not imposed that the model will fit the
+time series of interest for each country. Nonetheless, Figure \ref{fig:figure3} shows that
+this specification provides a reasonably good fit to the actual data for
+this set of countries. Because the behavior of the skilled labor share and
+the skill premium do differ across countries, we believe that this finding
+is supportive of our parsimonious structure.
+
+\begin{figure}[!hbt]
+\centering
+\caption{\centering \textbf{Calibrated Technological Processes} \\ Skill-Biased (left panel) and Sector-Biased (right panel) Technologies.\\ The diamonds (squares) correspond to the high (low) -skill intensive sector.}
+\includegraphics[width=0.70\linewidth]{Figures/figure4.pdf} 
+\label{fig:figure4}
+\end{figure}
+
+It is of interest to note that the above procedure implies processes for
+technological change that are broadly similar across countries, as shown in
+Figure 4 \footnote{%
+The plots in Figure \ref{fig:figure4} have removed country fixed effects in order to focus
+on the changes in technology over time rather than the cross-sectional
+differences.}. To the extent that we believe the process of technology
+adoption and diffusion are at least generally similar across rich countries,
+we would view it is as somewhat problematic if our procedure indicated
+dramatically different processes across these countries.
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+%\clearpage
+%\newpage
+%\normalsize
+\newpage
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
+
